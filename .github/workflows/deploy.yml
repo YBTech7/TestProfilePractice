@@ -54,7 +54,7 @@ jobs:
       - name: Build website
         env:
           VITE_API_BASE_URL: https://welcome-page-production-6941f322.up.railway.app
-          VITE_BASE_PATH: /PioOrlyLanguisan/
+          VITE_BASE_PATH: /TestProfilePractice/
         run: npm run build
 
       - name: Verify production files
@@ -68,6 +68,8 @@ jobs:
           fi
 
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
         if: github.event_name != 'pull_request'
 
       - uses: actions/upload-pages-artifact@v3
