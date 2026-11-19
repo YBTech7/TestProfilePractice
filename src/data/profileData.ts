@@ -238,6 +238,7 @@ export const INITIAL_PROJECTS: ProjectCase[] = [
       'Interactive throughput modeling for capacity planning',
     ],
     imageUrl: ANALYTICS_VISUAL_URL,
+    animationVariant: 'analytics',
   },
   {
     id: 'proj-ai-triage',
@@ -255,6 +256,7 @@ export const INITIAL_PROJECTS: ProjectCase[] = [
       'Responsive Midnight Teal & Metallic Gold interface architecture',
     ],
     imageUrl: WORKFLOW_VISUAL_URL,
+    animationVariant: 'ai-circuit',
   },
   {
     id: 'proj-network-ops',
@@ -272,6 +274,7 @@ export const INITIAL_PROJECTS: ProjectCase[] = [
       'Centralized SOP library for cross-time-zone operational teams',
     ],
     imageUrl: NETWORK_VISUAL_URL,
+    animationVariant: 'network',
   },
 ];
 

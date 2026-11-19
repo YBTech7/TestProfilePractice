@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, X } from 'lucide-react';
+import { AnimatedProjectImage } from './effects/AnimatedProjectImage';
+import { GoldenLightBackground } from './effects/GoldenLightBackground';
 import { resolveAssetUrl } from '../data/profileData';
 import type { FaqItem, InsightArticle, ProjectCase } from '../types';
 
@@ -53,7 +55,8 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
         id="projects"
         className="scroll-mt-20 relative z-10 border-b border-[#C8A253]/15 py-16 sm:py-20"
       >
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+        <GoldenLightBackground variant="projects" />
+        <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
@@ -92,21 +95,20 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
             {filteredProjects.map((project) => (
               <article
                 key={project.id}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-[#C8A253]/15 bg-[#0A202B]/90 transition-colors hover:border-[#C8A253]/40"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-[#C8A253]/15 bg-[#0A202B]/90 transition-[border-color,box-shadow] duration-300 hover:border-[#C8A253]/45 focus-within:border-[#C8A253]/45 hover:shadow-[0_12px_32px_-16px_rgba(200,162,83,0.28)]"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#06141E]">
-                  <img
-                    src={resolveAssetUrl(project.imageUrl)}
-                    alt={project.title}
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                  />
+                <AnimatedProjectImage
+                  src={resolveAssetUrl(project.imageUrl)}
+                  alt={project.title}
+                  variant={project.animationVariant}
+                  domain={project.domain}
+                  aspectClassName="aspect-[4/3]"
+                >
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06141E]/85 via-transparent to-transparent"
+                    className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-[#06141E]/85 via-transparent to-transparent"
                   />
-                  <div className="absolute bottom-3 left-4 right-4 flex items-baseline justify-between gap-2">
+                  <div className="absolute bottom-3 left-4 right-4 z-10 flex items-baseline justify-between gap-2">
                     <span className="font-mono text-2xl font-semibold tabular-nums text-[#DFC585]">
                       {project.metricValue}
                     </span>
@@ -114,7 +116,7 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
                       {project.metricLabel}
                     </span>
                   </div>
-                </div>
+                </AnimatedProjectImage>
 
                 <div className="flex flex-1 flex-col justify-between p-6">
                   <div>
@@ -150,7 +152,8 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
         id="insights"
         className="scroll-mt-20 relative z-10 border-b border-[#C8A253]/15 py-16 sm:py-20"
       >
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+        <GoldenLightBackground variant="insights" />
+        <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             {/* Editorial Insights */}
             <div className="lg:col-span-7">
@@ -266,11 +269,13 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
             </h3>
 
             <div className="mt-5 overflow-hidden rounded-xl border border-[#C8A253]/18">
-              <img
+              <AnimatedProjectImage
                 src={resolveAssetUrl(activeProject.imageUrl)}
                 alt={activeProject.title}
-                referrerPolicy="no-referrer"
-                className="aspect-video w-full object-cover"
+                variant={activeProject.animationVariant}
+                domain={activeProject.domain}
+                aspectClassName="aspect-video"
+                loading="eager"
               />
             </div>
 

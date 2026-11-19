@@ -32,6 +32,12 @@ export interface ClientTierSolution {
   keyDeliverable: string;
 }
 
+export type ProjectImageAnimationVariant =
+  | 'analytics'
+  | 'ai-circuit'
+  | 'network'
+  | 'ambient';
+
 export interface ProjectCase {
   id: string;
   title: string;
@@ -43,6 +49,7 @@ export interface ProjectCase {
   summary: string;
   architecture: string[];
   imageUrl: string;
+  animationVariant?: ProjectImageAnimationVariant;
 }
 
 export interface InsightArticle {

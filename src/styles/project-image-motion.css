@@ -1,0 +1,316 @@
+:root {
+  --motion-navy: #06141e;
+  --motion-teal: #0b222d;
+  --motion-gold: #c8a253;
+  --motion-gold-bright: #e5ce93;
+  --motion-champagne: #dfc585;
+  --motion-ivory: #f5f2eb;
+  --motion-glow: rgba(200, 162, 83, 0.25);
+}
+
+.project-motion-frame {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.project-motion-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform;
+  animation: projectParallaxDrift 18s ease-in-out infinite alternate;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-motion-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1), filter 550ms ease;
+}
+
+.group:hover .project-motion-img,
+.group:focus-within .project-motion-img {
+  transform: scale(1.02);
+  filter: brightness(1.04) contrast(1.02);
+}
+
+.project-motion-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.84;
+  transition: opacity 450ms ease;
+}
+
+.group:hover .project-motion-overlay,
+.group:focus-within .project-motion-overlay {
+  opacity: 1;
+}
+
+.project-motion-frame.is-offscreen *,
+.project-motion-frame.is-offscreen *::before,
+.project-motion-frame.is-offscreen *::after {
+  animation-play-state: paused !important;
+}
+
+.project-motion-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Data / Circuit / Network Flowing Signals */
+.motion-data-path {
+  fill: none;
+  stroke: var(--motion-gold-bright);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 22 140;
+  stroke-dashoffset: 162;
+  opacity: 0.72;
+  filter: drop-shadow(0 0 4px rgba(229, 206, 147, 0.55));
+  animation: goldenDataFlow var(--flow-duration, 11s) linear var(--flow-delay, 0s) infinite;
+}
+
+.motion-data-path--subtle {
+  stroke: var(--motion-gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 14 146;
+  stroke-dashoffset: 160;
+  opacity: 0.56;
+}
+
+.motion-data-path--reverse {
+  animation-direction: reverse;
+}
+
+.group:hover .motion-data-path,
+.group:focus-within .motion-data-path {
+  opacity: 0.94;
+}
+
+/* Pulsing Nodes */
+.motion-node-core {
+  fill: var(--motion-ivory);
+  animation: nodeCorePulse var(--pulse-duration, 6.5s) ease-in-out var(--pulse-delay, 0s) infinite;
+}
+
+.motion-node-halo {
+  fill: rgba(229, 206, 147, 0.28);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nodeHaloBreath var(--pulse-duration, 6.5s) ease-in-out var(--pulse-delay, 0s) infinite;
+}
+
+/* Breathing Ambient Glows */
+.motion-ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(229, 206, 147, 0.28) 0%,
+    rgba(200, 162, 83, 0.12) 45%,
+    transparent 74%
+  );
+  animation: motionGlowBreath var(--glow-duration, 9s) ease-in-out var(--glow-delay, 0s) infinite alternate;
+}
+
+.group:hover .motion-ambient-glow,
+.group:focus-within .motion-ambient-glow {
+  filter: brightness(1.18);
+}
+
+/* Monitor Screen Reflection (Card 1) */
+.analytics-screen-clip {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(34.8% 28.2%, 86.4% 19.4%, 86% 88.9%, 34.6% 83.3%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.analytics-screen-sheen {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  width: 34%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(245, 242, 235, 0.02) 32%,
+    rgba(229, 206, 147, 0.11) 50%,
+    rgba(245, 242, 235, 0.02) 68%,
+    transparent 100%
+  );
+  transform: translate3d(-140%, 0, 0) skewX(-12deg);
+  animation: screenReflectionSweep 12s ease-in-out infinite;
+}
+
+/* Micro-particles inside circuit & network overlays */
+.motion-micro-dot {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #f5f2eb 0%, #e5ce93 52%, transparent 100%);
+  box-shadow: 0 0 6px rgba(229, 206, 147, 0.45);
+  animation: microDotDrift var(--dot-duration, 10s) ease-in-out var(--dot-delay, 0s) infinite;
+}
+
+/* Shimmer highlight band for network / ambient variants */
+.motion-shimmer-band {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 55% 40% at 50% 50%,
+    rgba(229, 206, 147, 0.14) 0%,
+    rgba(200, 162, 83, 0.05) 48%,
+    transparent 74%
+  );
+  animation: softShimmerDrift 11s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+@keyframes goldenDataFlow {
+  0% {
+    stroke-dashoffset: 162;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes nodeCorePulse {
+  0%,
+  100% {
+    opacity: 0.48;
+  }
+  50% {
+    opacity: 0.98;
+  }
+}
+
+@keyframes nodeHaloBreath {
+  0%,
+  100% {
+    transform: scale(0.86);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.32);
+    opacity: 0.72;
+  }
+}
+
+@keyframes motionGlowBreath {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.06);
+    opacity: 0.82;
+  }
+}
+
+@keyframes projectParallaxDrift {
+  0% {
+    transform: scale(1.015) translate3d(-0.45%, -0.35%, 0);
+  }
+  50% {
+    transform: scale(1.02) translate3d(0.45%, 0.25%, 0);
+  }
+  100% {
+    transform: scale(1.015) translate3d(-0.25%, 0.4%, 0);
+  }
+}
+
+@keyframes screenReflectionSweep {
+  0%,
+  15% {
+    transform: translate3d(-130%, 0, 0) skewX(-12deg);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.9;
+  }
+  65% {
+    transform: translate3d(320%, 0, 0) skewX(-12deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(320%, 0, 0) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes microDotDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.75);
+    opacity: 0.12;
+  }
+  45% {
+    transform: translate3d(var(--dot-dx, 14px), var(--dot-dy, -8px), 0) scale(1.1);
+    opacity: 0.72;
+  }
+  80% {
+    opacity: 0.28;
+  }
+}
+
+@keyframes softShimmerDrift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(0.96);
+    opacity: 0.42;
+  }
+  100% {
+    transform: translate3d(2%, 1%, 0) scale(1.04);
+    opacity: 0.78;
+  }
+}
+
+@media (max-width: 639px) {
+  .project-motion-desktop-detail {
+    display: none !important;
+  }
+
+  .motion-data-path {
+    filter: none;
+  }
+
+  .project-motion-media {
+    animation-duration: 22s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-motion-media,
+  .project-motion-overlay,
+  .project-motion-overlay *,
+  .project-motion-img {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .motion-data-path {
+    stroke-dasharray: none;
+    opacity: 0.28;
+  }
+
+  .motion-node-core {
+    opacity: 0.72;
+  }
+
+  .motion-node-halo {
+    opacity: 0.32;
+  }
+}

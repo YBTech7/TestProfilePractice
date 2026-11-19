@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { GoldenLightBackground } from './effects/GoldenLightBackground';
 import ProfilePhoto from './ProfilePhoto';
 
 interface HeroSectionProps {
@@ -14,7 +15,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       id="top"
       className="scroll-mt-20 relative z-10 border-b border-[#C8A253]/15 pt-10 pb-14 sm:pt-14 sm:pb-20"
     >
-      <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+      <GoldenLightBackground variant="hero" />
+      <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7 space-y-6">
             <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">

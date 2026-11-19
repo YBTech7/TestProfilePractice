@@ -1,0 +1,363 @@
+:root {
+  --light-gold-primary: #c8a253;
+  --light-gold-bright: #e5ce93;
+  --light-gold-soft: #dfc585;
+  --light-gold-deep: #6e5629;
+  --light-gold-glow: rgba(200, 162, 83, 0.22);
+  --light-gold-champagne-glow: rgba(223, 197, 133, 0.16);
+  --light-gold-deep-glow: rgba(110, 86, 41, 0.18);
+}
+
+.golden-light-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  contain: layout style paint;
+  user-select: none;
+}
+
+.golden-light-background.is-paused *,
+.golden-light-background.is-paused *::before,
+.golden-light-background.is-paused *::after {
+  animation-play-state: paused !important;
+}
+
+.golden-layer-ambient,
+.golden-layer-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Ambient Golden Glow */
+.golden-ambient-wash {
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: goldenAmbientDrift 28s ease-in-out infinite alternate;
+}
+
+.golden-ambient-wash--hero {
+  background:
+    radial-gradient(ellipse 52% 44% at 18% 24%, rgba(200, 162, 83, 0.12) 0%, rgba(200, 162, 83, 0.03) 48%, transparent 74%),
+    radial-gradient(ellipse 42% 38% at 84% 72%, rgba(223, 197, 133, 0.09) 0%, transparent 70%);
+}
+
+.golden-ambient-wash--about {
+  background:
+    radial-gradient(ellipse 46% 40% at 78% 28%, rgba(200, 162, 83, 0.08) 0%, transparent 72%),
+    radial-gradient(ellipse 38% 34% at 14% 78%, rgba(110, 86, 41, 0.08) 0%, transparent 70%);
+  animation-duration: 34s;
+}
+
+.golden-ambient-wash--services {
+  background:
+    radial-gradient(ellipse 48% 36% at 50% 16%, rgba(200, 162, 83, 0.08) 0%, transparent 72%),
+    radial-gradient(ellipse 42% 36% at 86% 80%, rgba(223, 197, 133, 0.07) 0%, transparent 72%);
+  animation-duration: 32s;
+}
+
+.golden-ambient-wash--solutions {
+  background:
+    radial-gradient(ellipse 44% 40% at 22% 36%, rgba(200, 162, 83, 0.09) 0%, transparent 72%),
+    radial-gradient(ellipse 44% 36% at 76% 68%, rgba(110, 86, 41, 0.09) 0%, transparent 72%);
+  animation-duration: 30s;
+}
+
+.golden-ambient-wash--projects {
+  background:
+    radial-gradient(ellipse 50% 38% at 24% 26%, rgba(223, 197, 133, 0.08) 0%, transparent 72%),
+    radial-gradient(ellipse 44% 36% at 82% 76%, rgba(200, 162, 83, 0.08) 0%, transparent 72%);
+  animation-duration: 33s;
+}
+
+.golden-ambient-wash--insights {
+  background:
+    radial-gradient(ellipse 44% 36% at 72% 24%, rgba(200, 162, 83, 0.06) 0%, transparent 72%);
+  animation-duration: 36s;
+}
+
+.golden-ambient-wash--contact {
+  background:
+    radial-gradient(ellipse 48% 44% at 20% 42%, rgba(200, 162, 83, 0.11) 0%, transparent 72%),
+    radial-gradient(ellipse 42% 38% at 84% 72%, rgba(223, 197, 133, 0.08) 0%, transparent 72%);
+  animation-duration: 29s;
+}
+
+.golden-ambient-wash--footer {
+  background:
+    radial-gradient(ellipse 54% 70% at 50% 100%, rgba(200, 162, 83, 0.06) 0%, transparent 74%);
+  animation-duration: 38s;
+}
+
+/* Luminous Golden Orbs */
+.golden-orb {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 38% 38%,
+    rgba(229, 206, 147, 0.34) 0%,
+    rgba(200, 162, 83, 0.16) 36%,
+    rgba(110, 86, 41, 0.05) 62%,
+    transparent 76%
+  );
+  filter: blur(22px);
+  will-change: transform, opacity;
+  animation: goldenOrbFloat var(--orb-duration, 26s) ease-in-out var(--orb-delay, 0s) infinite alternate;
+}
+
+.golden-orb--soft {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(223, 197, 133, 0.24) 0%,
+    rgba(200, 162, 83, 0.11) 42%,
+    transparent 75%
+  );
+}
+
+/* Flowing Golden Light Trails */
+.golden-trail {
+  position: absolute;
+  height: 1.5px;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(200, 162, 83, 0.06) 18%,
+    rgba(229, 206, 147, 0.34) 50%,
+    rgba(200, 162, 83, 0.08) 82%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(200, 162, 83, 0.16);
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: goldenTrailFlow var(--trail-duration, 22s) ease-in-out var(--trail-delay, 0s) infinite;
+}
+
+.golden-trail-arc {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: goldenTrailArcFloat var(--trail-duration, 28s) ease-in-out var(--trail-delay, 0s) infinite alternate;
+}
+
+/* Floating Golden Particles */
+.golden-particle {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    var(--particle-color, #e5ce93) 0%,
+    rgba(200, 162, 83, 0.45) 55%,
+    transparent 100%
+  );
+  box-shadow: 0 0 6px rgba(200, 162, 83, 0.28);
+  will-change: transform, opacity;
+}
+
+.golden-particle--up {
+  animation: goldenParticleDriftUp var(--p-duration, 22s) ease-in-out var(--p-delay, 0s) infinite;
+}
+
+.golden-particle--diag {
+  animation: goldenParticleDriftDiag var(--p-duration, 26s) ease-in-out var(--p-delay, 0s) infinite;
+}
+
+/* Golden Stardust Shimmer Points */
+.golden-stardust {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(247, 231, 180, 0.9) 0%,
+    rgba(200, 162, 83, 0.36) 45%,
+    transparent 78%
+  );
+  will-change: transform, opacity;
+  animation: goldenStardustShimmer var(--s-duration, 14s) ease-in-out var(--s-delay, 0s) infinite;
+}
+
+/* Responsive Adaptive Density */
+@media (max-width: 1023px) {
+  .golden-desktop-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .golden-tablet-up {
+    display: none !important;
+  }
+
+  .golden-orb {
+    filter: blur(14px);
+    transform-origin: center;
+    max-width: 170px;
+    max-height: 170px;
+  }
+
+  .golden-trail {
+    box-shadow: none;
+  }
+}
+
+/* Keyframes (Transform & Opacity only for GPU compositing) */
+@keyframes goldenAmbientDrift {
+  0% {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+    opacity: 0.82;
+  }
+  50% {
+    transform: translate3d(1.5%, 1.2%, 0) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-0.8%, 1.8%, 0) scale(0.99);
+    opacity: 0.86;
+  }
+}
+
+@keyframes goldenOrbFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.96);
+    opacity: var(--orb-opacity-min, 0.22);
+  }
+  50% {
+    transform: translate3d(var(--orb-dx, 18px), var(--orb-dy, -16px), 0) scale(1.04);
+    opacity: var(--orb-opacity-max, 0.42);
+  }
+  100% {
+    transform: translate3d(calc(var(--orb-dx, 18px) * -0.6), calc(var(--orb-dy, -16px) * 0.7), 0) scale(0.98);
+    opacity: var(--orb-opacity-min, 0.24);
+  }
+}
+
+@keyframes goldenParticleDriftUp {
+  0% {
+    transform: translate3d(0, 14px, 0) scale(0.85);
+    opacity: 0;
+  }
+  18% {
+    opacity: var(--p-opacity, 0.22);
+  }
+  55% {
+    transform: translate3d(var(--p-dx, 10px), calc(var(--p-dy, -36px) * 0.55), 0) scale(1.06);
+    opacity: var(--p-opacity, 0.26);
+  }
+  85% {
+    opacity: calc(var(--p-opacity, 0.22) * 0.7);
+  }
+  100% {
+    transform: translate3d(calc(var(--p-dx, 10px) * -0.4), var(--p-dy, -36px), 0) scale(0.88);
+    opacity: 0;
+  }
+}
+
+@keyframes goldenParticleDriftDiag {
+  0% {
+    transform: translate3d(-10px, 10px, 0) scale(0.88);
+    opacity: 0;
+  }
+  20% {
+    opacity: var(--p-opacity, 0.2);
+  }
+  60% {
+    transform: translate3d(calc(var(--p-dx, 26px) * 0.65), calc(var(--p-dy, -24px) * 0.65), 0) scale(1.04);
+    opacity: var(--p-opacity, 0.24);
+  }
+  88% {
+    opacity: calc(var(--p-opacity, 0.2) * 0.65);
+  }
+  100% {
+    transform: translate3d(var(--p-dx, 26px), var(--p-dy, -24px), 0) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes goldenTrailFlow {
+  0% {
+    transform: translate3d(-8%, 4px, 0) rotate(var(--trail-angle, -8deg)) scaleX(0.92);
+    opacity: 0;
+  }
+  25% {
+    opacity: var(--trail-opacity, 0.24);
+  }
+  55% {
+    transform: translate3d(4%, -2px, 0) rotate(var(--trail-angle, -8deg)) scaleX(1.04);
+    opacity: calc(var(--trail-opacity, 0.24) * 1.15);
+  }
+  85% {
+    opacity: calc(var(--trail-opacity, 0.24) * 0.65);
+  }
+  100% {
+    transform: translate3d(12%, -6px, 0) rotate(var(--trail-angle, -8deg)) scaleX(0.94);
+    opacity: 0;
+  }
+}
+
+@keyframes goldenTrailArcFloat {
+  0% {
+    transform: translate3d(-1.5%, 0, 0) scale(0.98);
+    opacity: 0.16;
+  }
+  50% {
+    transform: translate3d(1.5%, -6px, 0) scale(1.02);
+    opacity: 0.34;
+  }
+  100% {
+    transform: translate3d(0, 4px, 0) scale(0.99);
+    opacity: 0.18;
+  }
+}
+
+@keyframes goldenStardustShimmer {
+  0%,
+  100% {
+    transform: scale(0.65);
+    opacity: 0.04;
+  }
+  45% {
+    transform: scale(1.18);
+    opacity: var(--s-opacity, 0.34);
+  }
+  65% {
+    transform: scale(0.92);
+    opacity: calc(var(--s-opacity, 0.34) * 0.48);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .golden-light-background *,
+  .golden-light-background *::before,
+  .golden-light-background *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .golden-ambient-wash {
+    opacity: 0.85;
+  }
+
+  .golden-orb {
+    opacity: var(--orb-opacity-min, 0.22);
+  }
+
+  .golden-particle {
+    opacity: calc(var(--p-opacity, 0.22) * 0.7);
+  }
+
+  .golden-trail {
+    opacity: calc(var(--trail-opacity, 0.22) * 0.65);
+  }
+
+  .golden-stardust {
+    opacity: 0.16;
+  }
+}

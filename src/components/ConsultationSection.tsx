@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { CheckCircle2, Send } from 'lucide-react';
+import { GoldenLightBackground } from './effects/GoldenLightBackground';
 import { CLIENT_TIER_SOLUTIONS, SERVICE_OFFERINGS } from '../data/profileData';
 import { ApiError, apiFetch } from '../lib/apiClient';
 import {
@@ -143,7 +144,8 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
 
   return (
     <section id="contact" className="scroll-mt-20 relative z-10 py-16 sm:py-20">
-      <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+      <GoldenLightBackground variant="contact" />
+      <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5 space-y-5">
             <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">

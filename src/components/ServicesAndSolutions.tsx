@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, Check, MessageSquare, Sparkles } from 'lucide-react';
+import { AnimatedProjectImage } from './effects/AnimatedProjectImage';
+import { GoldenLightBackground } from './effects/GoldenLightBackground';
 import {
   CLIENT_TIER_SOLUTIONS,
   NETWORK_VISUAL_URL,
@@ -123,7 +125,8 @@ export const ServicesAndSolutions: React.FC<ServicesAndSolutionsProps> = ({
         id="about"
         className="scroll-mt-20 relative z-10 border-b border-[#C8A253]/15 py-16 sm:py-20"
       >
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+        <GoldenLightBackground variant="about" />
+        <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-6 space-y-5">
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
@@ -165,13 +168,12 @@ export const ServicesAndSolutions: React.FC<ServicesAndSolutionsProps> = ({
             </div>
 
             <div className="lg:col-span-6">
-              <div className="overflow-hidden rounded-2xl border border-[#C8A253]/20 bg-[#0A202B]">
-                <img
+              <div className="group overflow-hidden rounded-2xl border border-[#C8A253]/20 bg-[#0A202B] transition-colors hover:border-[#C8A253]/40">
+                <AnimatedProjectImage
                   src={resolveAssetUrl(NETWORK_VISUAL_URL)}
                   alt="Distributed network topology representing interconnected operational systems"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                  className="aspect-video w-full object-cover"
+                  variant="network"
+                  aspectClassName="aspect-video"
                 />
                 <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#C8A253]/15 px-5 py-3.5 text-xs text-[#C2D0D6]">
                   <span>Connected Operations Architecture</span>
@@ -188,7 +190,8 @@ export const ServicesAndSolutions: React.FC<ServicesAndSolutionsProps> = ({
         id="services"
         className="scroll-mt-20 relative z-10 border-b border-[#C8A253]/15 py-16 sm:py-20"
       >
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+        <GoldenLightBackground variant="services" />
+        <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="flex flex-col justify-between gap-4 border-b border-[#C8A253]/15 pb-8 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
@@ -276,7 +279,8 @@ export const ServicesAndSolutions: React.FC<ServicesAndSolutionsProps> = ({
         id="solutions"
         className="scroll-mt-20 relative z-10 border-b border-[#C8A253]/15 py-16 sm:py-20"
       >
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+        <GoldenLightBackground variant="solutions" />
+        <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">

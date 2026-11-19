@@ -26,6 +26,7 @@ import { ServicesAndSolutions } from './components/ServicesAndSolutions';
 import { ProjectsAndInsights } from './components/ProjectsAndInsights';
 import { ConsultationSection } from './components/ConsultationSection';
 import { BrandMark } from './components/BrandMark';
+import { GoldenLightBackground } from './components/effects/GoldenLightBackground';
 
 const AiAdvisorDrawer = lazy(() =>
   import('./components/AiAdvisorDrawer').then((m) => ({ default: m.AiAdvisorDrawer }))
@@ -151,7 +152,8 @@ export default function App() {
       </main>
 
       <footer className="relative z-10 border-t border-[#C8A253]/15 bg-[#05111A] py-10">
-        <div className="mx-auto flex max-w-[1280px] flex-col justify-between gap-6 px-5 sm:px-8 md:flex-row md:items-center">
+        <GoldenLightBackground variant="footer" />
+        <div className="relative z-10 mx-auto flex max-w-[1280px] flex-col justify-between gap-6 px-5 sm:px-8 md:flex-row md:items-center">
           <div className="flex items-center gap-3">
             <BrandMark customLogoUrl={brand.customLogoDataUrl} size={36} decorative />
             <div>
