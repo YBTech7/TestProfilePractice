@@ -155,7 +155,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <BrandMark customLogoUrl={brand.customLogoDataUrl} size={36} decorative />
             <div>
-              <p className="font-display text-sm font-semibold leading-snug text-[#F5F2EB]">
+              <p className="heading-uppercase font-display text-sm font-semibold leading-snug text-[#F5F2EB]">
                 Pio Languisan
               </p>
               <p className="text-xs text-[#C2D0D6]">

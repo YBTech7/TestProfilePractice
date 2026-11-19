@@ -129,7 +129,7 @@ export const ServicesAndSolutions: React.FC<ServicesAndSolutionsProps> = ({
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
                 Executive Profile
               </p>
-              <h2 className="font-display text-3xl font-semibold tracking-tight text-[#F5F2EB] sm:text-4xl text-balance">
+              <h2 className="font-display text-3xl font-semibold text-[#F5F2EB] sm:text-4xl text-balance">
                 Where hands-on operations meet clear technical execution.
               </h2>
               <p className="text-base leading-relaxed text-[#C2D0D6]">
@@ -194,7 +194,7 @@ export const ServicesAndSolutions: React.FC<ServicesAndSolutionsProps> = ({
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
                 Core Services
               </p>
-              <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#F5F2EB] sm:text-4xl text-balance">
+              <h2 className="mt-2 font-display text-3xl font-semibold text-[#F5F2EB] sm:text-4xl text-balance">
                 Six practice disciplines built for measurable delivery.
               </h2>
             </div>
@@ -282,7 +282,7 @@ export const ServicesAndSolutions: React.FC<ServicesAndSolutionsProps> = ({
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
                 Business Solutions
               </p>
-              <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#F5F2EB] sm:text-4xl text-balance">
+              <h2 className="mt-2 font-display text-3xl font-semibold text-[#F5F2EB] sm:text-4xl text-balance">
                 Structured engagement models for every stage of growth.
               </h2>
             </div>

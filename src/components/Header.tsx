@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
           className="inline-flex min-h-[44px] items-center gap-2.5 sm:gap-3 whitespace-nowrap shrink-0 rounded-lg px-1.5 -ml-1.5 py-1 transition-colors hover:text-[#DFC585] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A253] focus-visible:ring-offset-2 focus-visible:ring-offset-[#06141E]"
         >
           <BrandMark customLogoUrl={customLogoUrl} size={36} decorative />
-          <span className="font-display text-base sm:text-[17px] lg:text-lg font-semibold leading-none tracking-tight text-[#F5F2EB] whitespace-nowrap shrink-0">
+          <span className="heading-uppercase font-display text-base sm:text-[17px] lg:text-lg font-semibold leading-none text-[#F5F2EB] whitespace-nowrap shrink-0">
             Pio Languisan
           </span>
         </a>

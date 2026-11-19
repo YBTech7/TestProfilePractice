@@ -21,7 +21,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Technology · Operations · Analytics
             </p>
 
-            <h1 className="font-display text-3xl font-semibold leading-[1.1] tracking-tight text-[#F5F2EB] sm:text-5xl text-balance max-w-2xl">
+            <h1 className="font-display text-3xl font-semibold leading-[1.1] text-[#F5F2EB] sm:text-5xl text-balance max-w-2xl">
               Executive operations, technical support, and analytics built for clarity.
             </h1>
 

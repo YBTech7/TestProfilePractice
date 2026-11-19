@@ -59,7 +59,7 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
                 Projects & Architecture
               </p>
-              <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#F5F2EB] sm:text-4xl text-balance">
+              <h2 className="mt-2 font-display text-3xl font-semibold text-[#F5F2EB] sm:text-4xl text-balance">
                 Representative systems and operational blueprints.
               </h2>
               <p className="mt-2 text-xs text-[#C2D0D6]">
@@ -157,7 +157,7 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
                 Insights & Briefings
               </p>
-              <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#F5F2EB]">
+              <h2 className="mt-2 font-display text-3xl font-semibold text-[#F5F2EB]">
                 Field notes on operations, analytics, and systems.
               </h2>
 
@@ -190,7 +190,7 @@ export const ProjectsAndInsights: React.FC<ProjectsAndInsightsProps> = ({
               <p className="text-xs font-medium tracking-[0.14em] uppercase text-[#DFC585]">
                 Knowledge Center
               </p>
-              <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#F5F2EB]">
+              <h2 className="mt-2 font-display text-3xl font-semibold text-[#F5F2EB]">
                 Frequently asked questions.
               </h2>
 

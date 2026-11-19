@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
+:root {
+  --font-primary:
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    "URW Palladio L",
+    "TeX Gyre Pagella",
+    Georgia,
+    serif;
+}
+
 @theme {
-  --font-display: "Outfit", system-ui, -apple-system, sans-serif;
-  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-display:
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    "URW Palladio L",
+    "TeX Gyre Pagella",
+    Georgia,
+    serif;
+  --font-sans:
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    "URW Palladio L",
+    "TeX Gyre Pagella",
+    Georgia,
+    serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --color-midnight-navy: #06141e;
@@ -20,19 +45,49 @@
     scroll-behavior: smooth;
     background-color: #06141e;
     color: #f5f2eb;
-    font-family: "DM Sans", system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #root {
+    font-family: var(--font-primary);
   }
 
   body {
     background: linear-gradient(180deg, #06141e 0%, #071c25 48%, #06151f 100%);
     color: #f5f2eb;
+    font-size: 16px;
+    line-height: 1.65;
+    font-weight: 400;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, .font-display {
-    font-family: "Outfit", system-ui, -apple-system, sans-serif;
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .heading-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 
   ::selection {
