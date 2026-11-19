@@ -112,3 +112,29 @@ export interface AiScopeRecommendation {
   executiveSummary: string;
   actionPlan: string[];
 }
+
+export type PortraitInteractionState =
+  | 'IDLE'
+  | 'HOVERING'
+  | 'TRACKING_GAZE'
+  | 'EXPRESSING'
+  | 'DRAGGING'
+  | 'RETURNING'
+  | 'REDUCED_MOTION';
+
+export type PortraitExpressionState =
+  | 'neutral'
+  | 'smile'
+  | 'eyebrow-raise'
+  | 'playful-reaction';
+
+export interface PortraitEyeRigAssets {
+  leftIrisUrl?: string;
+  rightIrisUrl?: string;
+  upperEyelidMaskUrl?: string;
+}
+
+export type PortraitExpressionFrames = Partial<
+  Record<PortraitExpressionState, string>
+>;
+

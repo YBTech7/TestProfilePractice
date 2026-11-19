@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/profile-photo.css";
+import { InteractivePortrait } from "./portrait/InteractivePortrait";
 
 interface ProfilePhotoProps {
   className?: string;
@@ -36,22 +37,17 @@ export default function ProfilePhoto({
   }
 
   return (
-    <div className="profile-photo-container">
-      <div className="profile-photo-frame">
-        <img
-          src={imagePath}
-          alt={alt}
-          width={1199}
-          height={1312}
-          className={`profile-photo ${className}`.trim()}
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
-          fetchPriority={priority ? "high" : "auto"}
-          draggable={false}
-          onError={() => setHasError(true)}
-        />
-        <div className="profile-photo-vignette" aria-hidden="true" />
-      </div>
-    </div>
+    <InteractivePortrait
+      src={imagePath}
+      alt={alt}
+      width={1199}
+      height={1312}
+      className={className}
+      priority={priority}
+      enableEyeTracking
+      enableExpressions
+      enableDragMotion
+      onError={() => setHasError(true)}
+    />
   );
 }
