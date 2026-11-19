@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const basePath =
     process.env.VITE_BASE_PATH ||
     (process.env.GITHUB_ACTIONS === 'true' || mode === 'gh-pages'
-      ? '/PioOrlyLanguisan/'
+      ? '/TestProfilePractice/'
       : '/');
 
   return {
